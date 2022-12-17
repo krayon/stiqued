@@ -104,14 +104,12 @@ if(isset($replies) and !empty($replies)){
 	<?php }?>
 	</tbody>
 	</table>
-</section>
 <?php echo $pages;
 }
 
 if(!$this->config->item('disable_replies')){
 	$reply_form['page']['title'] = lang('paste_replyto') . ' "' . $title . '"';
 	$reply_form['page']['instructions'] = lang('paste_replyto_desc');
-	$this->load->view('defaults/paste_form', $reply_form); ?>
 	$this->load->view('defaults/paste_form', $reply_form);
 } ?>
 
