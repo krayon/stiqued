@@ -1,13 +1,13 @@
-version: "3.7"
+version: "3.9"
 
 services:
   nginx:
-    image: nginx:1.17-alpine
+    image: nginx:alpine
     volumes:
       - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./htdocs:/htdocs:ro
     ports:
-      - 127.0.0.1:80:80/tcp
+      - 8075:80
 
   php:
     image: stiqued-php:1
@@ -20,12 +20,13 @@ services:
       context: ./docker/php
 
   mysql:
-    image: mariadb:10.4
-    command: mysqld --innodb-buffer-pool-size=4000000000
+    image: mariadb:11
+    command: mariadbd --innodb-buffer-pool-size=4G
     volumes:
-      - ./mysql-datadir_customize-in-docker-compose.yml:/var/lib/mysql
+      - ./mariadb_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: stiqued
-      MYSQL_USER: stiqued
-      MYSQL_PASSWORD: stiqued
+      # MARIADB_ROOT_PASSWORD: root
+      MARIADB_RANDOM_ROOT_PASSWORD: 1
+      MARIADB_DATABASE: stiqued
+      MARIADB_USER: stiqued
+      MARIADB_PASSWORD: stiqued
