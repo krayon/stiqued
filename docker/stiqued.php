@@ -234,14 +234,14 @@ $config['soft_api'] = false;
  *
  **/
 $config['private_only'] = false;
-$config['enable_captcha'] = true;
+$config['enable_captcha'] = false;
 $config['recaptcha_publickey'] = '';
 $config['recaptcha_privatekey'] = '';
 $config['disable_api'] = false;
 $config['disable_keep_forever'] = false;
 $config['blocked_words'] = '';
 $config['disable_shorturl'] = false;
-$config['disallow_search_engines'] = false;
+$config['disallow_search_engines'] = true;
 $config['enable_adminlink'] = false;
 $config['disable_replies'] = false;
 
@@ -262,7 +262,7 @@ $config['spamadmin_pass'] = '';
  *  483840 (1 year)
  *  0 (keep forever)
  **/
-$config['default_expiration'] = 0;
+$config['default_expiration'] = 483840;
 
 /**
  * Default language
