@@ -6,6 +6,9 @@ services:
     volumes:
       - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./htdocs:/htdocs:ro
+    depends_on:
+      - mysql
+      - php
     ports:
       - 8075:80
 
@@ -16,6 +19,8 @@ services:
       - ./docker/php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:ro
       - ./htdocs:/htdocs
       - ./docker/stiqued.php:/htdocs/application/config/stiqued.php:ro
+    depends_on:
+      - mysql
     build:
       context: ./docker/php
 
