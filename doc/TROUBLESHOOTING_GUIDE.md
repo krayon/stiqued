@@ -1,7 +1,7 @@
-Stikked troubleshooting guide
+Stiqued troubleshooting guide
 -----------------------------
 
-First, be sure to double-check whether you meet the [prerequisites](//github.com/claudehohl/Stikked#prerequisites).
+First, be sure to double-check whether you meet the [prerequisites](//github.com/krayon/stiqued#prerequisites).
 
 ### Apache
 
@@ -56,4 +56,4 @@ You need to have the GD extension for PHP installed and enabled so that the QR c
 Still have a problem?
 ---------------------
 
-Report an issue [at GitHub](//github.com/claudehohl/Stikked/issues), and we will add your problem to this guide.
+Report an issue [at GitHub](//github.com/krayon/stiqued/issues), and we will add your problem to this guide.
