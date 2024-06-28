@@ -67,3 +67,5 @@
 * Vasya Pupkin https://github.com/shadowlmd (Lighttpd improvements)
 * John Poole https://github.com/jlpoolen (investigating Log.php path issue)
 * CompuRoot https://github.com/CompuRoot (Better burn on read page)
+* Krayon https://github.com/krayon (Stiqued)
+* Borys Vrublevskyi https://github.com/BorysVrublevskyi (Docker updates)
