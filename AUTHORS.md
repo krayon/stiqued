@@ -69,3 +69,4 @@
 * CompuRoot https://github.com/CompuRoot (Better burn on read page)
 * Krayon https://github.com/krayon (Stiqued)
 * Borys Vrublevskyi https://github.com/BorysVrublevskyi (Docker updates)
+* TehPeGaSuS https://github.com/TehPeGaSuS (Some theme updates)
