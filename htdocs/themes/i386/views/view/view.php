@@ -20,6 +20,9 @@ if(isset($insert)){
 			</div>
 			<div class="row">
 				<div class="span12 meta">
+
+<table class="table100p"><tbody><tr><td>
+
 					<div class="detail by"><?php echo lang('paste_from'); ?> <?php echo $name; ?>, <?php $p = explode(',', timespan($created, time())); echo sprintf($this->lang->line('paste_ago'),$p[0]); ?>, <?php echo lang('paste_writtenin'); ?> <?php echo $lang; ?>.</div>
 			<?php if($expire > 0){?><span class="detail by"><?php echo sprintf(lang('paste_expire'), random_expire_msg()); ?> <?php echo timespan(time(), $expire, 1); ?>.</span><?php } ?>
 					<?php if(isset($inreply)){?><div class="detail by"><?php echo lang('paste_isareply'); ?> <a href="<?php echo $inreply['url']?>"><?php echo $inreply['title']; ?></a> <?php echo strtolower(lang('paste_from')); ?> <?php echo $inreply['name']; ?>
@@ -42,8 +45,19 @@ if(isset($insert)){
 <?php }else{ ?>
                     <?php echo lang('paste_viewdiffs'); ?> <a href="<?php echo $inreply['url']?>"><?php echo $inreply['title']; ?></a> <?php echo lang('paste_and'); ?> <a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 <?php } ?>
-						
+
 				</div>			
+
+<?php if($this->config->item('qr_enabled')) { ?>
+<td>
+		<div class="qr">
+			<img src="<?php echo site_url('view/qr/' . $pid); ?>">
+		</div>
+</td>
+<?php } ?>
+
+</td></tr></tbody></table>
+
 			</div>
 		</div>
 	</div>

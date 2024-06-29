@@ -137,3 +137,25 @@ table.table thead .sorting_desc_disabled { background: url('../images/sort_desc_
 .text {
     word-wrap: break-word;
 }
+
+.qr {
+	width:  120px;
+	height: 140px;
+	text-align: right;
+	float: right;
+}
+
+.table100p {
+	min-width: 100%;
+}
+
+.qr img {
+	text-align: right;
+	width:  99px;
+	height: 99px;
+	float: right;
+        margin-top:    20px;
+        margin-bottom: 20px;
+        margin-left:   20px;
+        margin-right:   0px;
+}
