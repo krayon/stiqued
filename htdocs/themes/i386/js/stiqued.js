@@ -64,6 +64,60 @@ var CM = {
     }
 };
 
+ST.spamadmin = function () {
+    if ($('.content h1').text() == 'Spamadmin') {
+        $('.content .hidden').show();
+        $('.content .quick_remove').live('click', function (ev) {
+            var ip = $(ev.target).data('ip');
+            if (confirm('Delete all pastes belonging to ' + ip + '?')) {
+                $.post(base_url + 'spamadmin/' + ip, {
+                    'confirm_remove': 'yes',
+                    'block_ip': 1
+                }, function () {
+                    window.location.reload();
+                });
+            }
+            return false;
+        });
+
+        $(document).tooltip({
+            items: "td.first a",
+            content: function (done) {
+                var pid = $(this).attr('href').split('view/')[1];
+                $.get(base_url + 'view/raw/' + pid + '?preview', function (data) {
+                    done(data);
+                });
+            },
+            show: false,
+            hide: false
+        });
+    }
+
+    // needed by .selectable
+    $.fn.addBack = function (selector) {
+        return this.add(selector == null ? this.prevObject : this.prevObject.filter(selector));
+    }
+
+    $('.selectable>tbody').selectable({
+        filter: 'tr',
+        cancel: 'a',
+        stop: function () {
+            var $deletestack = $(".paste_deletestack");
+            var $input = $("input[name=pastes_to_delete]");
+            $('.inv').show();
+            $deletestack.empty();
+            $input.empty();
+            var res = [];
+            $(".ui-selected").each(function (i, el) {
+                var id = $('a', el).attr('href').split('view/')[1];
+                res.push(id);
+            });
+            $deletestack.text(res.join(' '));
+            $input.val(res.join(' '));
+        }
+    });
+};
+
 ST.line_highlighter = function() {
     var org_href = window.location.href.replace(/(.*?)#(.*)/, '$1');
     var first_line = false;
@@ -274,6 +328,7 @@ ST.filereader = function() {
 $(document).ready(function() {
     ST.init();
     //CM.init();
+    ST.spamadmin();
     ST.line_highlighter();
     ST.crypto();
     ST.filereader();

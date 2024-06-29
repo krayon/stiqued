@@ -26,6 +26,7 @@ $this->carabiner->config(array(
 ));
 
 // CSS
+$this->carabiner->css('jquery-ui.min.css');
 $this->carabiner->css('bootstrap.css');
 $this->carabiner->css('bootstrap-responsive.css');
 $this->carabiner->css('style.css');

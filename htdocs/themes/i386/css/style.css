@@ -159,3 +159,6 @@ table.table thead .sorting_desc_disabled { background: url('../images/sort_desc_
         margin-left:   20px;
         margin-right:   0px;
 }
+
+.ui-selectable>.ui-selected { -webkit-filter: invert(100%); filter: invert(100%); background: #000084; /* body bg */ }
+.ui-selectable>.ui-selecting { background: #FECA40; }

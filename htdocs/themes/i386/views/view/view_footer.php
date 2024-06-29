@@ -19,6 +19,7 @@ $this->load->view('defaults/stats');
 $this->carabiner->js('jquery.js');
 $this->carabiner->js('bootstrap.min.js');
 $this->carabiner->js('jquery.timers.js');
+$this->carabiner->js('jquery-ui-selectable-combined.min.js');
 //$this->carabiner->js('jquery.dataTables.min.js');
 $this->carabiner->js('codemirror/lib/codemirror.js');
 $this->carabiner->js('crypto-js/rollups/aes.js');
