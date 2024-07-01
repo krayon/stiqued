@@ -228,7 +228,7 @@ ST.crypto = function() {
         } else {
             try {
                 var $code = $('#code');
-                var encrypted = $code.val().replace(/\n/g, '');
+                var encrypted = $code.text().replace(/[^A-Za-z0-9+\/=]/g, '');
                 var decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8) + '';
                 decrypted = LZString.decompressFromBase64(decrypted);
                 $code.val(decrypted);
@@ -254,6 +254,7 @@ ST.crypto = function() {
                 for (var i = 2; i <= 5; i++) {
                     $('.meta .detail:nth-child(' + i + ')').hide();
                 }
+                $('.qr').hide();
             } catch (e) {}
         }
     }

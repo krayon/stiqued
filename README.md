@@ -24,9 +24,9 @@ Here are some features:
 Try it out
 ----------
 
-https://paste.scratchbook.ch/
+https://p.qdnx.org/
 
-See an encrypted paste: https://paste.scratchbook.ch/view/1427473f#iP7p05DRH0BC72qQjxv01BjUeOmNV073
+See an encrypted paste: https://p.qdnx.org/view/0ac7d388#bsmPvu2kVs3LKsFSdUHnuEjE4c2ny3qd
 
 
 Prerequisites

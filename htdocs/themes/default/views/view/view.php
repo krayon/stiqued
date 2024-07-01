@@ -58,7 +58,7 @@ if(isset($insert)){
 
 <div class="paste">
 	<div class="text_formatted">
-		<div class="container">
+		<div class="container" id="code">
 			<?php echo $paste; ?>
 		</div>
 	</div>

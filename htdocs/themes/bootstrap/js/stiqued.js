@@ -38,6 +38,8 @@ ST.spamadmin = function () {
         return this.add(selector == null ? this.prevObject : this.prevObject.filter(selector));
     }
 
+    // TODO: Fix this (fails on viewing encrypted posts, likely more too)
+    try {
     $('.selectable>tbody').selectable({
         filter: 'tr',
         cancel: 'a',
@@ -56,6 +58,7 @@ ST.spamadmin = function () {
             $input.val(res.join(' '));
         }
     });
+    } catch (e) { }
 };
 
 ST.line_highlighter = function () {
@@ -174,7 +177,7 @@ ST.crypto = function () {
         } else {
             try {
                 var $code = $('#code');
-                var encrypted = $code.val().replace(/\n/g, '');
+                var encrypted = $code.text().replace(/[^A-Za-z0-9+\/=]/g, '');
                 var decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8) + '';
                 decrypted = LZString.decompressFromBase64(decrypted);
                 $code.val(decrypted);
