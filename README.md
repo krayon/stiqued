@@ -80,6 +80,30 @@ In the folder doc/, you will find:
 Changelog
 ---------
 
+### Version 0.16.0:
+
+* Fixed encrypted paste views for various themes
+* Docker updates ( courtesy of Borys Vrublevskyi )
+* Added disable_replies functionality to rest of themes ( some courtesy of TehPeGaSuS )
+* Added QR code to i386 theme
+* Fixed admin selection for i386 theme
+
+### Version 0.15.0:
+
+* Add Project URL configuration variable
+* Renamed project to "Stiqued"
+* Various minor fixes
+
+### Version 0.14.0q:
+
+* Remove search params for Recent and Trending menu links
+* Fix (new) search from deeper list pages
+* Corrected XSS vuln in title param
+* Config option to disable replies for pastes ( `disable_replies` )
+* Admin menu option to link directly to admin interface ( `enable_adminlink` )
+* Hide shorturl checkbox when disabled
+* Fixed newline
+
 ### Version 0.14.0:
 
 * Rewritten the Docker setup to be simple and clean:
